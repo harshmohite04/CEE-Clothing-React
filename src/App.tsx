@@ -3,14 +3,20 @@ import "./App.css";
 import UpperLayer from "./components/upperLayer";
 import Header from "./components/Header";
 import ForFront from "./components/ForFront";
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import LandingPage from "./LandingPage";
 
 function App() {
   return (
-    <RecoilRoot>
-      <UpperLayer />
-      <Header/>
-      <ForFront/>
-    </RecoilRoot>
+
+    <BrowserRouter>
+
+    <Routes>
+      <Route path='/' element={<LandingPage/>}></Route>
+    </Routes>
+    </BrowserRouter>
+
+
   );
 }
 

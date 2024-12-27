@@ -7,7 +7,7 @@ function UpperLayer() {
 
   return (
     cross ? (
-      <div  style={{backgroundColor:"#000000"}} className="flex justify-center px-2 py-2">
+      <div  style={{backgroundColor:"#000000"}} className="flex select-none justify-center px-2 py-2">
         <div className="color-white text-white text-sm sm:text-lg">
           Sign up and get 20% off to your first order.
         </div>
