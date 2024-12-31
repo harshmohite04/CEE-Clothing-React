@@ -7,12 +7,13 @@ function UpperLayer() {
 
   return (
     cross ? (
-      <div  style={{backgroundColor:"#000000"}} className="flex select-none justify-center px-2 py-2">
-        <div className="color-white text-white text-sm sm:text-lg">
+      <div  style={{backgroundColor:"#000000"}} className="flex select-none justify-center px-2 py-2 w-full">
+     
+        <div className="color-white text-white text-xs sm:text-lg">
           Sign up and get 20% off to your first order.
         </div>
 
-        <div className="font-bold text-white border-b-2 mr-4 text-sm sm:text-lg">Sign Up Now</div>
+        <div className="font-bold text-white border-b-2 mr-4 text-xs sm:text-lg"> Sign Up Now</div>
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
