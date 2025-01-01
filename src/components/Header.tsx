@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 function Header() {
   return (
-    <div className="flex bg-white py-2 ">
+    <div className="flex bg-white py-3">
       <div className="flex w-3/4 items-center">
-        <div className="block sm:hidden px-4 sm:px-0">
+        <div className="block md:hidden px-4 md:px-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
