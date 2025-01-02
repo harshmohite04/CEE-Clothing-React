@@ -6,23 +6,41 @@ function Header() {
   const search = useRecoilValue(searchQueryAtom);
 
   const items = [
-    {name:"Product1",
-      photo:"https://static.zara.net/assets/public/3c26/8a5b/052846bc9785/18c0495921d2/04174842800-p/04174842800-p.jpg?ts=1733931782632&w=563"
+    {
+      name: "Product1",
+      photo:
+        "https://static.zara.net/assets/public/3c26/8a5b/052846bc9785/18c0495921d2/04174842800-p/04174842800-p.jpg?ts=1733931782632&w=563",
+        price:"Rs 3499"
     },
-    {name:"Product2",
-      photo:"https://static.zara.net/assets/public/ecf7/0d7b/232f44d8b8ee/7451a9bb4cce/05644081500-e1/05644081500-e1.jpg?ts=1731670237134&w=563"
+    {
+      name: "Product2",
+      photo:
+        "https://static.zara.net/assets/public/ecf7/0d7b/232f44d8b8ee/7451a9bb4cce/05644081500-e1/05644081500-e1.jpg?ts=1731670237134&w=563",
+        price:"Rs 4499"
     },
-    {name:"Product3",
-      photo:"https://static.zara.net/assets/public/bd26/60c0/70d049a4bc2d/df7cba1ba7b7/03332310712-e1/03332310712-e1.jpg?ts=1727185921481&w=563"
+    {
+      name: "Product3",
+      photo:
+        "https://static.zara.net/assets/public/bd26/60c0/70d049a4bc2d/df7cba1ba7b7/03332310712-e1/03332310712-e1.jpg?ts=1727185921481&w=563",
+        price:"Rs 3899"
     },
-    {name:"Product4",
-      photo:"https://static.zara.net/assets/public/dc71/0bd2/6be14632ba4c/e91779c7333b/04393350800-a1/04393350800-a1.jpg?ts=1734366389017&w=563"
+    {
+      name: "Product4",
+      photo:
+        "https://static.zara.net/assets/public/dc71/0bd2/6be14632ba4c/e91779c7333b/04393350800-a1/04393350800-a1.jpg?ts=1734366389017&w=563",
+        price:"Rs 3492"
     },
-    {name:"Product5",
-      photo:"https://static.zara.net/assets/public/eae0/9be1/de1041e0b7c7/9121f3b4dfe8/07446307427-e1/07446307427-e1.jpg?ts=1726995650850&w=563"
+    {
+      name: "Product5",
+      photo:
+        "https://static.zara.net/assets/public/eae0/9be1/de1041e0b7c7/9121f3b4dfe8/07446307427-e1/07446307427-e1.jpg?ts=1726995650850&w=563",
+        price:"Rs 5499"
     },
-    {name:"Product6",
-      photo:"https://static.zara.net/assets/public/7eab/2f6f/a7d34327b664/90526bb8732b/05758675707-e1/05758675707-e1.jpg?ts=1727000174081&w=563"
+    {
+      name: "Product6",
+      photo:
+        "https://static.zara.net/assets/public/7eab/2f6f/a7d34327b664/90526bb8732b/05758675707-e1/05758675707-e1.jpg?ts=1727000174081&w=563",
+        price:"Rs 2499"
     },
   ];
 
@@ -60,7 +78,7 @@ function Header() {
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6"
+                className="size-6"
               >
                 <path
                   stroke-linecap="round"
@@ -103,21 +121,53 @@ function Header() {
           onChange={(e) => setSearch(e.target.value)}
         />
 
+        {search && (
+          <div
+            className="absolute mt-10 z-11 w-2/6 rounded-lg px-5 py-1"
+            style={{
+              maxHeight: "600px", // Set the max height you want for the scrollable box
+              overflowY: "auto", // Enable vertical scrolling
+              backgroundColor: "#e3dce0",
+            }}
+          >
+            <div className="flex mt-2 border-b hover:bg-gray-200 cursor-pointer">
+              no Items Found
+            </div>
+          </div>
+        )}
         {search && filteredItems.length > 0 && (
           <div
             className="absolute mt-10 z-10 w-2/6 rounded-lg px-5 py-1"
             style={{
-      maxHeight: "600px",  // Set the max height you want for the scrollable box
-      overflowY: "auto",   // Enable vertical scrolling
-      backgroundColor: "#e3dce0"
-    }}
+              maxHeight: "600px", // Set the max height you want for the scrollable box
+              overflowY: "auto", // Enable vertical scrolling
+              backgroundColor: "#e3dce0",
+            }}
           >
             {filteredItems.map((item, index) => (
-              <div className="flex mt-2 border-b hover:bg-gray-200 cursor-pointer" key={index} >
+              <div
+                className="flex mt-2 border-b hover:bg-gray-200 rounded-l-full cursor-pointer"
+                key={index}
+              >
+                <div className="w-1/4 ">
+                  <img
+                    src={item.photo}
+                    className="max-w-28 rounded-2xl"
+                    alt=""
+                  />
+                </div>
+                <div className=" content-center w-3/4 px-5">
+
                 <div className="">
-                  <img src={item.photo} className="max-w-28 rounded-2xl" alt=""  />
-                  </div>
+
                 {item.name}
+
+                </div>
+                <div className="">
+                {item.price}
+                  
+                </div>
+                </div>
               </div>
             ))}
           </div>
