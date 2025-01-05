@@ -68,8 +68,9 @@ function Main() {
         ))}
 
       </div>
-        <div className="py-10">
-          
+
+        <div className="md:text-xl md:px-20 py-2 px-8 mt-10 mb-20 text-center border-black border-2  justify-self-center rounded-full">
+          View All
         </div>
     </div>
   );
