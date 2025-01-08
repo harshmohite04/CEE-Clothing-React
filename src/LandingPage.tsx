@@ -6,7 +6,7 @@ import Main from "./components/Main";
 import TopSelling from "./components/TopSelling";
 import BrowseDesignStyle from "./components/BrowseDesignStyle";
 import Message from "./components/Message";
-
+import Footer from "./components/Footer";
 function LandingPage() {
   return (
     <RecoilRoot>
@@ -17,6 +17,7 @@ function LandingPage() {
       <TopSelling/>
       <BrowseDesignStyle/>
       <Message/>
+      <Footer/>
     </RecoilRoot>
   );
 }
