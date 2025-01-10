@@ -1,41 +1,43 @@
 function Footer() {
   return (
     <div className="">
-      <div className=" bg-black mx-5 py-5 px-5 rounded-3xl">
-        <div className="font-black text-4xl text-white">
+      <div className=" bg-black mx-5 py-5 px-5 rounded-3xl md:flex ">
+        <div className="font-black text-4xl md:text-5xl md:content-center md:pl-10 text-white md:w-3/5">
           STAY UPTO DATE ABOUT OUR LATEST OFFERS
         </div>
+        <div className="md:w-1/3 ">
+          <div className="justify-self-center px-10 w-11/12 my-3 py-3 rounded-full bg-white flex md:justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+              />
+            </svg>
 
-        <div className="justify-self-center px-10 w-11/12 my-3 py-3 rounded-full bg-white flex">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            className="size-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-            />
-          </svg>
-
-          <input placeholder="Enter your email address" className="px-2" />
-        </div>
-        <div className="bg-white rounded-full py-3 w-11/12 text-center justify-self-center my-3 font-semibold">
-          Subscribe to Newsletter
+            <input placeholder="Enter your email address" className="px-2" />
+          </div>
+          <div className="bg-white rounded-full py-3 w-11/12 text-center justify-self-center my-3 font-semibold">
+            Subscribe to Newsletter
+          </div>
         </div>
       </div>
 
-      <div className="px-4 mt-8">
+      <div className="px-4 mt-8 md:flex py-5" style={{backgroundColor:"#F0F0F0"}}>
+      <div className="">
         <div className="font-black text-4xl">CEE.SHOP</div>
         <div className="text-opacity-60 mt-2 text-black">
           We have clothes that suits your style and which you're proud to wear.
           From women to men.
         </div>
-        <div className="bg-white w-full h-auto py-8 flex items-center justify-center gap-2 flex-wrap">
+        <div className="w-full h-auto py-8 flex items-center justify-center gap-2 flex-wrap ">
           <a
             href="javascript:;"
             className="p-2 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100"
@@ -184,10 +186,10 @@ function Footer() {
             </svg>
           </a>
         </div>
-
-        <div className="flex justify-around border-b-2 py-5">
-          <div className="">
-            <div className="mt-5">
+</div>
+        <div className="flex justify-around py-5 w-full">
+          <div className="md:flex  md:w-full md:justify-around">
+            <div className="mt-5 ">
               <div className="font-medium text-xl">COMPANY</div>
               <div className="py-1 text-black text-opacity-60">About</div>
               <div className="py-1 text-black text-opacity-60">Features</div>
@@ -205,7 +207,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="">
+          <div className="md:flex md:w-full md:justify-around">
             <div className="mt-5">
               <div className="font-medium text-xl">HELP</div>
               <div className="py-1 text-black text-opacity-60">
@@ -237,9 +239,13 @@ function Footer() {
           </div>
         </div>
 
+      </div>
         <div className="py-10 justify-self-center">
-          <div className="text-black text-opacity-60">CEE.SHOP © 2000-2023, All Rights Reserved</div>
+          <div className="text-black text-opacity-60">
+            CEE.SHOP © 2000-2023, All Rights Reserved
+          </div>
           <div className="flex justify-around">
+
             <svg
               enable-background="new 0 0 750 471"
               height="471"
@@ -391,7 +397,6 @@ function Footer() {
             </svg>
           </div>
         </div>
-      </div>
     </div>
   );
 }
