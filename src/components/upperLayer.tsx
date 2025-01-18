@@ -13,7 +13,7 @@ function UpperLayer() {
           Sign up and get 20% off to your first order.
         </div>
 
-        <div className="font-bold text-white border-b-2 mr-4 text-xs sm:text-lg"> Sign Up Now</div>
+        <div className="font-bold text-white border-b-2 mr-4 text-xs sm:text-lg cursor-pointer"> Sign Up Now</div>
 
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ function UpperLayer() {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="size-6"
+          className="size-6 cursor-pointer"
           color="#ffffff"
           onClick={() => {
             setCross((val) => !val); // Toggles the state of upperLayerAtom

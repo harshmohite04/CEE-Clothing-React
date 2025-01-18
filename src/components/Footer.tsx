@@ -242,7 +242,7 @@ function Footer() {
       </div>
         <div className="py-10 justify-self-center">
           <div className="text-black text-opacity-60">
-            CEE.SHOP © 2000-2023, All Rights Reserved
+            CEE.SHOP © 2000-2025, All Rights Reserved
           </div>
           <div className="flex justify-around">
 
