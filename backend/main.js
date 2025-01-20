@@ -2,25 +2,39 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const app = express();
-// mongodb+srv://innov8turegroupco:innov8turegroupco@ceeclothing.tupuo.mongodb.net/
+// Use environment variables for sensitive data
+const MONGO_URI =
+  process.env.MONGO_URI ||
+  "mongodb+srv://mohiteharsh639:t5bnvvXsAJ2y72Vn@cluster0.0nsbt.mongodb.net/";
 
+// Connect to MongoDB
 mongoose
-  .connect(
-    "mongodb+srv://innov8turegroupco:JbqNbrjDR6nst6dr@ceeclothing.tupuo.mongodb.net/"
-  )
+  .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("Connected to MongoDB");
-
-    const items = mongoose.model("items",{
-        
-    })
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err.message);
   });
+
+// Define Mongoose schema and model
+const itemSchema = new mongoose.Schema({
+  name: String,
+  price: Number,
+  category: String,
+});
+
+const Item = mongoose.model("Item", itemSchema);
 
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.get("/landingPage/items", (req, res) => {});
+app.get("/landingPage/items", (req, res) => {
+  let itemsList = Item.find();
+  res.send(itemsList);
+});
+
 app.listen(3000, () => {
   console.log(`This server runs on 3000`);
 });
