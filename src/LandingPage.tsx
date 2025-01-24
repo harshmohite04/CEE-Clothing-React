@@ -9,16 +9,18 @@ import Message from "./components/Message";
 import Footer from "./components/Footer";
 function LandingPage() {
   return (
-    <RecoilRoot>
+    // <RecoilRoot>
+    <div className="">
       <UpperLayer />
       <Header />
       <ForFront />
-      <Main/>
-      <TopSelling/>
-      <BrowseDesignStyle/>
-      <Message/>
-      <Footer/>
-    </RecoilRoot>
+      <Main />
+      <TopSelling />
+      <BrowseDesignStyle />
+      <Message />
+      <Footer />
+    </div>
+    // </RecoilRoot>
   );
 }
 
