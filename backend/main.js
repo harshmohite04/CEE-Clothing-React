@@ -55,13 +55,21 @@ app.get("/landingPage/items", async (req, res) => {
 
 app.post("/landing/createItems", async (req, res) => {
   try {
-    const { name, price, category } = req.query;
-    if (!name || !price || !category) {
+    const { name, price, rating, discountPrice, discountPercent, image } =
+      req.query;
+    if (
+      !name ||
+      !price ||
+      !rating ||
+      !discountPrice ||
+      !discountPercent ||
+      !image
+    ) {
       return res.status(400).json({
         success: false,
         message: "Missing required fields",
       });
-    }
+    } 
     const createdItem = await Item.create({
       name,
       rating,
@@ -105,13 +113,11 @@ app.post("/create/bla", async (req, res) => {
   }
 });
 
-app.post("/delete/bla",async(req,res)=>{
+app.post("/delete/bla", async (req, res) => {
   try {
-    const deletedItem = await Item.find
-  } catch (error) {
-    
-  }
-})
+    const deletedItem = await Item.find;
+  } catch (error) {}
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;

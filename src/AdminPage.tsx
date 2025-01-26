@@ -2,6 +2,14 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { itemListAtom } from "./components/atoms/atom";
+
+type Item = {
+  name: string;
+  price: number;
+  discountPrice: number;
+  discountPercent: number;
+  image: string;
+};
 function AdminPage() {
   const [itemList, setItemList] = useRecoilState(itemListAtom);
 
@@ -94,10 +102,10 @@ function AdminPage() {
       </div>
       <div className="place-items-center  w-1/2">
         {itemList && itemList.length > 0 ? (
-          itemList.map((item, index) => (
+          itemList.map(({item}:{item:Item}, index) => (
             <div
               key={index}
-              className="item flex flex-row justify-between py-2 bg-black mt-10 px-5 py-5 rounded-2xl"
+              className="item flex flex-row justify-between py-2 bg-black mt-10 px-5 rounded-2xl"
             >
               <div className="px-10">
                 <span className="text-white">Name: {item.name}</span>
