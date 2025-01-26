@@ -1,9 +1,25 @@
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { itemListAtom } from "./atoms/atom";
+import { useEffect } from "react";
+import axios from "axios";
 
 function TopSelling() {
-  const itemList = useRecoilValue(itemListAtom);
+  const [itemList,setItemList] = useRecoilState(itemListAtom);
   
+  useEffect(() => {
+    const apiCall = async () => {
+      console.log("YO YO");
+      const response = await axios.get(
+        "http://localhost:3000/landingPage/items"
+      );
+      setItemList(response.data.items);
+      // console.log(response.data.items);
+    };
+    apiCall();
+
+    console.log(itemList);
+    
+  }, []);
     const topSellingItems = [
       {
         name: "STRIPED TEXTURED SHIRT",
@@ -49,6 +65,7 @@ function TopSelling() {
           TOP SELLING
         </div>
         <div className="flex w-full overflow-x-scroll   pl-4 no-scrollbar">
+          {/* Deploy Backend and change the Arr */}
           {topSellingItems.map((item, index) => (
             <div className="flex-shrink-0 w-3/5 md:w-1/4 px-1 mx-1 " key={index}>
               <img src={item.image} alt="" className="rounded-xl " />
@@ -60,13 +77,13 @@ function TopSelling() {
   
               <div className="flex items-center">
                 <div className="text-lg md:text-2xl pr-2 font-bold">
-                  {item.price}
+                  Rs {item.price}
                 </div>
                 <div className="text-lg md:text-2xl px-2 line-through opacity-40 font-bold">
-                  {item.discountPrice}
+                  Rs {item.discountPrice}
                 </div>
                 <div className="text-sm px-3 md:text-base bg-red-500 bg-opacity-10 rounded-full py-1 text-red-500">
-                  -{item.discountPercent}
+                  -{item.discountPercent}%
                 </div>
               </div>
             </div>
