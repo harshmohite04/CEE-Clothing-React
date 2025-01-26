@@ -1,4 +1,9 @@
+import { useRecoilValue } from "recoil";
+import { itemListAtom } from "./atoms/atom";
+
 function TopSelling() {
+  const itemList = useRecoilValue(itemListAtom);
+  
     const topSellingItems = [
       {
         name: "STRIPED TEXTURED SHIRT",
