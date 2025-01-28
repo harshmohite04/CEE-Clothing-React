@@ -115,7 +115,7 @@ app.post("/create/bla", async (req, res) => {
 
 app.post("/delete/bla", async (req, res) => {
   try {
-    const deletedItem = await Item.find;
+    const deletedItem = await Item.findOneAndDelete({name});
   } catch (error) {}
 });
 

@@ -15,14 +15,48 @@ type Item = {
 function TopSelling() {
   const [itemList, setItemList] = useRecoilState(itemListAtom);
 
+  const items = [
+    {
+      name: "STRIPED TEXTURED SHIRT",
+      rating: 5,
+      price: 4000,
+      discountPrice: 5000,
+      discountPercent: 20,
+      image: "https://static.zara.net/assets/public/a6a8/028c/1db74e1180d9/a9834d87294f/00399300250-e1/00399300250-e1.jpg?ts=1725544097767&w=750",
+    },
+    {
+      name: "CROPPED SKINNY JEANS",
+      rating: 4,
+      price: 4000,
+      discountPrice: 3000,
+      discountPercent: 25,
+      image: "https://static.zara.net/assets/public/ef8a/24c1/f1004de493bb/52541b2c2819/00840365800-000-e1/00840365800-000-e1.jpg?ts=1728557663885&w=750",
+    },
+    {
+      name: "BASIC TRAINING SHORTS",
+      rating: 3,
+      price: 4000,
+      discountPrice: 3800,
+      discountPercent: 10,
+      image: "https://static.zara.net/assets/public/9578/686c/88ac4d529b78/496fad1d609f/00706770515-e1/00706770515-e1.jpg?ts=1726218083384&w=294",
+    },
+    {
+      name: "WESTERN DENIM SHIRT",
+      rating: 4,
+      price: 6750,
+      discountPrice: 5000,
+      discountPercent: 25,
+      image: "https://static.zara.net/assets/public/ae62/2268/db8246cf9006/3976c70fad11/01538418800-e1/01538418800-e1.jpg?ts=1733819685299&w=750",
+    }
+  ];
+  
+
   useEffect(() => {
     const apiCall = async () => {
-      console.log("YO YO");
       const response = await axios.get(
         "http://localhost:3000/landingPage/items"
       );
       setItemList(response.data.items);
-      // console.log(response.data.items);
     };
     apiCall();
 
@@ -36,7 +70,7 @@ function TopSelling() {
       </div>
       <div className="flex w-full overflow-x-scroll   pl-4 no-scrollbar">
         {/* Deploy Backend and change the Arr */}
-        {itemList.map(({ item }: { item: Item }, index) => (
+        {items.map((item, index) => (
           <div className="flex-shrink-0 w-3/5 md:w-1/4 px-1 mx-1 " key={index}>
             <img src={item.image} alt="" className="rounded-xl " />
             <div className="font-bold text-base md:text-2xl">{item.name}</div>
