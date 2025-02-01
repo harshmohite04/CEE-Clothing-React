@@ -1,12 +1,11 @@
-import React from 'react'
 import Header from '../components/Header'
-import { BreadCrums } from '../components/BreadCrums'
+import { BreadCrumbs } from '../components/BreadCrums'
 import ProductCard from '../components/ProductCard'
 function ProductPage() {
   return (
     <div>
         <Header/>
-        <BreadCrums/>
+        <BreadCrumbs/>
         <ProductCard/>
     </div>
   )
