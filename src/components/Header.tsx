@@ -48,7 +48,7 @@ function Header() {
     item.name.toLowerCase().includes(search.toLowerCase())
   );
   return (
-    <div className="flex bg-white py-3">
+    <div className="flex bg-white py-3 border-b-2">
       <div className="flex w-3/4 items-center">
         <div className="block lg:hidden px-4 lg:px-0">
           <svg
@@ -69,25 +69,27 @@ function Header() {
 
         <div className="text-2xl font-black sm:px-5 sm:text-4xl">CEE.SHOP</div>
         <div className="hidden lg:flex w-1/2 justify-around">
-          <div className="flex">
-            <div className="">Shop</div>
-            <div className="justify-end">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                />
-              </svg>
+          <Link to="/productPage">
+            <div className="flex">
+              <div className="">Shop</div>
+              <div className="justify-end">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </div>
             </div>
-          </div>
+          </Link>
           <div className="">On Sale</div>
           <div className="">New Arrivals</div>
           <div className="">Brands</div>

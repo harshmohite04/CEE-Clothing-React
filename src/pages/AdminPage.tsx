@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import axios from "axios";
 import { useRecoilState } from "recoil";
-import { itemListAtom } from "./components/atoms/atom";
+import { itemListAtom } from "../components/atoms/atom";
 
 type Item = {
   name: string;
