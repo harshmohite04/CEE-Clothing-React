@@ -3,14 +3,14 @@ import { itemListAtom } from "./atoms/atom";
 import { useEffect } from "react";
 import axios from "axios";
 
-type Item = {
-  image: string;
-  name: string;
-  rating: number;
-  price: number;
-  discountPrice: number;
-  discountPercent: number;
-};
+// type Item = {
+//   image: string;
+//   name: string;
+//   rating: number;
+//   price: number;
+//   discountPrice: number;
+//   discountPercent: number;
+// };
 
 function TopSelling() {
   const [itemList, setItemList] = useRecoilState(itemListAtom);

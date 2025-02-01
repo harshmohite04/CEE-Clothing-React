@@ -1,4 +1,3 @@
-import { RecoilRoot } from "recoil";
 import UpperLayer from "../components/upperLayer";
 import Header from "../components/Header";
 import ForFront from "../components/ForFront";
