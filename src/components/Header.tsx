@@ -117,8 +117,8 @@ function Header() {
         </svg>
 
         <input
-          style={{ backgroundColor: "#f2f0f1" }}
-          className="border-none px-2"
+          style={{ backgroundColor: "#f2f0f1"}}
+          className="border-none px-2 outline-none"
           placeholder="Search for products..."
           onChange={(e) => setSearch(e.target.value)}
         />
