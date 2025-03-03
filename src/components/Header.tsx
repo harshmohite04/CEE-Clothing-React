@@ -56,33 +56,52 @@ function Header() {
             setHamburgerToggle(!hamburgerToggle);
           }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-8"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-            />
-          </svg>
+          {hamburgerToggle ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          )}
         </div>
         {hamburgerToggle ? null : (
-          <div className="absolute top-20 left-0 z-50 w-1/3 bg-red-400 p-4 shadow-lg rounded-r-xl">
+          <div className="absolute top-20 left-0 z-50 w-2/5 bg-red-400 p-4 shadow-lg rounded-r-xl">
             <Link to="/productPage">
-              <div className="">Shop</div>
+              <div className="text-lg">Shop</div>
             </Link>
-            <div className="">On Sale</div>
-            <div className="">New Arrivals</div>
-            <div className="">Brands</div>
+            <div className="text-lg">On Sale</div>
+            <div className="text-lg">New Arrivals</div>
+            <div className="text-lg">Brands</div>
           </div>
         )}
 
-        <div className="text-2xl font-black sm:px-5 sm:text-4xl"><Link to="/">CEE.SHOP</Link></div>
+        <div className="text-2xl font-black sm:px-5 sm:text-4xl">
+          <Link to="/">CEE.SHOP</Link>
+        </div>
         <div className="hidden lg:flex w-1/2 justify-around">
           <Link to="/productPage">
             <div className="flex">
