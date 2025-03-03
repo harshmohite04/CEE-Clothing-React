@@ -19,3 +19,7 @@ export const hamburgerAtom = atom({
   key: "hamburgerAtom",
   default: true,
 });
+export const countCounterAtom = atom({
+  key: "countCounterAtom",
+  default: 1,
+});
