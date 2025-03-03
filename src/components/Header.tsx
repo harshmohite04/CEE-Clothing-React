@@ -1,10 +1,10 @@
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { searchQueryAtom } from "./atoms/atom";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { hamburgerAtom, searchQueryAtom } from "./atoms/atom";
 import { Link } from "react-router-dom";
 function Header() {
   const setSearch = useSetRecoilState(searchQueryAtom);
   const search = useRecoilValue(searchQueryAtom);
-
+  const [hamburgerToggle, setHamburgerToggle] = useRecoilState(hamburgerAtom);
   const items = [
     {
       name: "Product1",
@@ -50,7 +50,12 @@ function Header() {
   return (
     <div className="flex bg-white py-3 border-b-2">
       <div className="flex w-3/4 items-center">
-        <div className="block lg:hidden px-4 lg:px-0">
+        <div
+          className="block lg:hidden px-4 lg:px-0"
+          onClick={() => {
+            setHamburgerToggle(!hamburgerToggle);
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -66,8 +71,18 @@ function Header() {
             />
           </svg>
         </div>
+        {hamburgerToggle ? null : (
+          <div className="absolute top-20 left-0 z-50 w-1/3 bg-red-400 p-4 shadow-lg rounded-r-xl">
+            <Link to="/productPage">
+              <div className="">Shop</div>
+            </Link>
+            <div className="">On Sale</div>
+            <div className="">New Arrivals</div>
+            <div className="">Brands</div>
+          </div>
+        )}
 
-        <div className="text-2xl font-black sm:px-5 sm:text-4xl">CEE.SHOP</div>
+        <div className="text-2xl font-black sm:px-5 sm:text-4xl"><Link to="/">CEE.SHOP</Link></div>
         <div className="hidden lg:flex w-1/2 justify-around">
           <Link to="/productPage">
             <div className="flex">
@@ -117,7 +132,7 @@ function Header() {
         </svg>
 
         <input
-          style={{ backgroundColor: "#f2f0f1"}}
+          style={{ backgroundColor: "#f2f0f1" }}
           className="border-none px-2 outline-none"
           placeholder="Search for products..."
           onChange={(e) => setSearch(e.target.value)}
